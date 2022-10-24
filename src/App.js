@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Nav_bar from "./Nav_bar";
+import About from "./About";
+import Contact from "./Contact";
+import Projects from "./Projects";
+import {useState} from 'react'
 function App() {
+  const [activePage, setActivePage] = useState('About')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-gray-900 h-screen flex items-center justify-start flex-col flex-grow">
+      <Nav_bar setActivePage={setActivePage}/>
+      <div>
+      if(activePage == 'About'){
+        <About/>
+      }else if(activePage == 'Contact'){
+        <Contact/>
+      }else{
+        <Projects/>
+      }
+      </div>
     </div>
   );
 }
