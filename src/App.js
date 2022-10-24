@@ -19,7 +19,7 @@ function App() {
   }
 
   return (
-    <div className="App bg-gray-900 h-screen flex items-center justify-start flex-col flex-grow text-2xl font-mono">
+    <div className="App bg-gray-900 h-full flex items-center justify-start flex-col text-2xl font-mono">
       <NavBar setActivePage={setActivePage} activePage={activePage} />
       <div className="my-16">
         { renderActivePage() }
